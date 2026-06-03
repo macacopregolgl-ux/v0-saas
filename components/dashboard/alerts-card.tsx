@@ -48,21 +48,21 @@ export function AlertsCard() {
             <Target className="w-5 h-5 text-[#c4a35a]" />
           </div>
           <div>
-            <h4 className="text-white font-semibold">Meta mensal</h4>
-            <p className="text-white/60 text-sm">R$ 4.850 de R$ 6.000</p>
+            <h4 className="text-white font-semibold">Meta do mes</h4>
+            <p className="text-white/60 text-sm">R$ 4.080 de R$ 6.000</p>
           </div>
         </div>
         <div className="h-3 bg-white/10 rounded-full overflow-hidden">
           <motion.div
             initial={{ width: 0 }}
-            animate={{ width: "81%" }}
+            animate={{ width: "68%" }}
             transition={{ delay: 0.8, duration: 1.5, ease: "easeOut" }}
             className="h-full bg-gradient-to-r from-[#c4a35a] to-[#d4b36a] rounded-full"
           />
         </div>
         <div className="flex justify-between mt-2">
-          <span className="text-white/50 text-xs">81% alcançado</span>
-          <span className="text-white/50 text-xs">Faltam R$ 1.150</span>
+          <span className="text-white/50 text-xs">68% alcancado</span>
+          <span className="text-white/50 text-xs">Faltam R$ 1.920</span>
         </div>
       </motion.div>
     </div>
