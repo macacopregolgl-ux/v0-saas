@@ -1,27 +1,27 @@
 "use client"
 
 import { useState } from "react"
+import { usePathname } from "next/navigation"
+import Link from "next/link"
 import { motion, AnimatePresence } from "framer-motion"
 import { 
   Home, 
   ArrowLeftRight, 
   Bell, 
-  FileText, 
-  Settings,
+  FileText,
   Menu,
   X
 } from "lucide-react"
 
 const menuItems = [
-  { icon: Home, label: "Início", href: "#" },
-  { icon: ArrowLeftRight, label: "Lançamentos", href: "#" },
-  { icon: Bell, label: "Alertas", href: "#" },
-  { icon: FileText, label: "Relatório", href: "#" },
-  { icon: Settings, label: "Configurações", href: "#" },
+  { icon: Home, label: "Início", href: "/dashboard" },
+  { icon: ArrowLeftRight, label: "Lançamentos", href: "/lancamentos" },
+  { icon: Bell, label: "Alertas", href: "/alertas" },
+  { icon: FileText, label: "Relatório", href: "/relatorio" },
 ]
 
 export function Sidebar() {
-  const [activeItem, setActiveItem] = useState("Início")
+  const pathname = usePathname()
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
@@ -64,21 +64,19 @@ export function Sidebar() {
           </button>
 
           {/* Logo */}
-          <div className="mb-10">
+          <Link href="/" className="block mb-10">
             <span className="text-2xl font-bold text-white">Fin<span className="text-[#c4a35a]">MEI</span></span>
-          </div>
+          </Link>
 
           {/* Menu items */}
           <nav className="space-y-2">
             {menuItems.map((item) => {
-              const isActive = activeItem === item.label
+              const isActive = pathname === item.href
               return (
-                <button
+                <Link
                   key={item.label}
-                  onClick={() => {
-                    setActiveItem(item.label)
-                    setMobileMenuOpen(false)
-                  }}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
                   className={`relative w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 ${
                     isActive 
                       ? "text-white" 
@@ -94,7 +92,7 @@ export function Sidebar() {
                   )}
                   <item.icon className="relative w-5 h-5" />
                   <span className="relative font-medium">{item.label}</span>
-                </button>
+                </Link>
               )
             })}
           </nav>
