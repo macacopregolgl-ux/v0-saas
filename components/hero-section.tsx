@@ -1,12 +1,11 @@
 "use client"
 
 import { motion } from "framer-motion"
-import Link from "next/link"
 
-const headlineWords = ["Suas", "financas,", "finalmente", "organizadas"]
+const headlineWords = ["Suas", "finanças,", "finalmente", "organizadas"]
 const subtitleWords = [
-  "Controle", "entradas,", "saidas", "e", "nunca", "mais", "perca", 
-  "o", "prazo", "do", "DAS.", "Simples,", "rapido,", "feito", "pra", "voce."
+  "Controle", "entradas,", "saídas", "e", "nunca", "mais", "perca", 
+  "o", "prazo", "do", "DAS.", "Simples,", "rápido,", "feito", "pra", "você."
 ]
 
 export function HeroSection() {
@@ -55,18 +54,12 @@ export function HeroSection() {
           transition={{ duration: 0.6, delay: 1.4, ease: "easeOut" }}
           className="flex items-center justify-center gap-4"
         >
-          <Link 
-            href="/cadastro"
-            className="px-8 py-4 text-base font-semibold bg-white text-[#080810] rounded-xl hover:bg-white/90 transition-colors"
-          >
-            Comecar gratis
-          </Link>
-          <Link 
-            href="/dashboard"
-            className="px-8 py-4 text-base font-semibold text-white border border-white/20 rounded-xl hover:bg-white/5 transition-colors"
-          >
-            Ver demonstracao
-          </Link>
+          <button className="px-8 py-4 text-base font-semibold bg-white text-[#080810] rounded-xl hover:bg-white/90 transition-colors">
+            Começar grátis
+          </button>
+          <button className="px-8 py-4 text-base font-semibold text-white border border-white/20 rounded-xl hover:bg-white/5 transition-colors">
+            Ver demonstração
+          </button>
         </motion.div>
       </div>
     </section>

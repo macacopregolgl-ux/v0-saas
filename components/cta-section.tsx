@@ -1,7 +1,6 @@
 "use client"
 
 import { motion } from "framer-motion"
-import Link from "next/link"
 
 export function CTASection() {
   return (
@@ -15,22 +14,18 @@ export function CTASection() {
       >
         <div className="rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-12 md:p-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 text-balance">
-            Pronto para organizar suas financas?
+            Pronto para organizar suas finanças?
           </h2>
           <p className="text-lg text-gray-400 mb-10">
-            Comece gratis hoje. Sem cartao de credito.
+            Comece grátis hoje. Sem cartão de crédito.
           </p>
-          <motion.div
+          <motion.button
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
+            className="px-8 py-4 text-lg font-semibold text-white border-2 border-white rounded-lg transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:bg-white/10"
           >
-            <Link
-              href="/cadastro"
-              className="inline-block px-8 py-4 text-lg font-semibold text-white border-2 border-white rounded-lg transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,255,255,0.3)] hover:bg-white/10"
-            >
-              Criar conta gratis
-            </Link>
-          </motion.div>
+            Criar conta grátis
+          </motion.button>
         </div>
       </motion.div>
     </section>
